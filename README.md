@@ -42,32 +42,19 @@ A simple RESTful API built with Node.js and Express that demonstrates basic CRUD
     Stores the greeting message in memory.
 
 - **CREATE endpoint (`POST /hello`):**  
-    - Receives a new greeting in the request body.
-    - Sets the `greeting` variable to the provided value or defaults to "Hello, World!".
-    - Responds with status 201 and the new greeting.
+    Accepts a new greeting in the request body, sets the `greeting` variable to this value (or defaults to "Hello, World!"), and responds with status 201 and the created greeting.
 
 - **READ endpoint (`GET /hello`):**  
-    - Returns the current value of the `greeting` variable as JSON.
+    Returns the current `greeting` value as a JSON response.
 
 - **UPDATE endpoint (`PUT /hello`):**  
-    - Receives an updated greeting in the request body.
-    - Stores the old greeting for logging.
-    - Updates the `greeting` variable to the new value (or keeps the old one if not provided).
-    - Logs the old and new greetings to the console.
-    - Responds with a message and the updated greeting.
+    Accepts an updated greeting in the request body, logs the old and new greetings, updates the `greeting` variable (or leaves it unchanged if none provided), and responds with a message and the updated greeting.
 
 - **DELETE endpoint (`DELETE /hello`):**  
-    - Logs the current greeting before deletion.
-    - Sets the `greeting` variable to an empty string.
-    - Logs that the greeting was deleted.
-    - Responds with a message confirming deletion.
+    Logs the current greeting, sets the `greeting` variable to an empty string, logs the deletion, and responds with a confirmation message.
 
 - **Start the server:**  
-    - Sets the port to 3000.
-    - Starts listening for requests.
-    - Logs a message to the console indicating the server is running and the URL.
-
----
+    Listens on port 3000 and logs the server URL to the console when running.
 
 ## File Structure
 
@@ -81,23 +68,26 @@ hello-world-api/
 ## Getting Started
 
 1. **Clone the repository:**
-     ```bash
-     git clone https://github.com/yourusername/hello-world-api.git
-     cd hello-world-api
-     ```
+
+    ```bash
+    git clone https://github.com/yourusername/hello-world-api.git
+    cd hello-world-api
+    ```
 
 2. **Install dependencies:**
-     ```bash
-     npm install
-     ```
+
+    ```bash
+    npm install
+    ```
 
 3. **Start the server:**
-     ```bash
-     node index.js
-     ```
+
+    ```bash
+    node index.js
+    ```
 
 4. **The API will be running at:**  
-     http://localhost:3000
+    [http://localhost:3000](http://localhost:3000)
 
 ---
 
@@ -128,19 +118,15 @@ curl http://localhost:3000/hello
 
 **Update the greeting:**
 
-> **Update the greeting:**
->
-> ```
-> curl -X PUT -H "Content-Type: application/json" -d '{"greeting":"Hello, API!"}' http://localhost:3000/hello
-> ```
+```bash
+curl -X PUT -H "Content-Type: application/json" -d '{"greeting":"Hello, API!"}' http://localhost:3000/hello
+```
 
 **Delete the greeting:**
 
-> **Delete the greeting:**
->
-> ```
-> curl -X DELETE http://localhost:3000/hello
-> ```
+```bash
+curl -X DELETE http://localhost:3000/hello
+```
 
 ---
 
